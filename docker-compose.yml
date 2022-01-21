@@ -21,7 +21,9 @@ services:
       - 8000:8000
     image: app:django
     container_name: django_container
-    command: python manage.py runserver 0.0.0.0:8000
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - db 
 
@@ -29,7 +31,7 @@ services:
     restart: always
     build:
       context: .
-    command: celery -A NewsAPI worker -l DEBUG
+    command: celery -A NewsAPI beat -l INFO
     volumes:
       - .:/django_project
     container_name: celery
