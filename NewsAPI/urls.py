@@ -4,6 +4,6 @@ from news.api.routers import router
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/v1/', include(router.urls)),
+    path("admin/", admin.site.urls),
+    path("api/v1/", include(router.urls)),
 ]

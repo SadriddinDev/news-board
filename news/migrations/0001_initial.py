@@ -8,29 +8,55 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Post',
+            name="Post",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255, verbose_name='Title of news post')),
-                ('link', models.URLField(max_length=255, verbose_name='Link of news post')),
-                ('creation_date', models.DateTimeField(auto_now_add=True)),
-                ('upvote_count', models.IntegerField(default=0)),
-                ('author_name', models.CharField(max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(max_length=255, verbose_name="Title of news post"),
+                ),
+                (
+                    "link",
+                    models.URLField(max_length=255, verbose_name="Link of news post"),
+                ),
+                ("creation_date", models.DateTimeField(auto_now_add=True)),
+                ("upvote_count", models.IntegerField(default=0)),
+                ("author_name", models.CharField(max_length=100)),
             ],
         ),
         migrations.CreateModel(
-            name='Comment',
+            name="Comment",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('author_name', models.CharField(max_length=100)),
-                ('content', models.TextField(max_length=2000)),
-                ('creation_date', models.DateTimeField(auto_now_add=True)),
-                ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='news.post')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("author_name", models.CharField(max_length=100)),
+                ("content", models.TextField(max_length=2000)),
+                ("creation_date", models.DateTimeField(auto_now_add=True)),
+                (
+                    "post",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="news.post"
+                    ),
+                ),
             ],
         ),
     ]

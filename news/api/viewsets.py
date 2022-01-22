@@ -11,7 +11,7 @@ class PostViewSet(ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-    @action(detail=True, methods=['get'])
+    @action(detail=True, methods=["get"])
     def upvote_post(self, request, pk=None):
         try:
             post = Post.objects.get(id=pk)
@@ -19,8 +19,10 @@ class PostViewSet(ModelViewSet):
             post.save()
             return Response(PostSerializer(post, many=False).data)
         except Post.DoesNotExist:
-            return Response({"message": f"{pk} post object does not exist!"}, 
-                            status=status.HTTP_404_NOT_FOUND)
+            return Response(
+                {"message": f"{pk} post object does not exist!"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
 
 
 class CommentViewSet(ModelViewSet):
