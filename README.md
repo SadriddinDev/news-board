@@ -6,14 +6,14 @@
 
 - API runs in the docker container.
 
-- [django-celery-beat](doc:https://github.com/celery/django-celery-beat) was used to reset the posts upvote_count
+- [django-celery-beat](https://github.com/celery/django-celery-beat) was used to reset the posts upvote_count
 
-- Code is formatted in [black](doc:https://github.com/psf/black)
-- Code checked using [Flake8](doc:https://flake8.pycqa.org/en/latest/)
-- Postman documentation: **[https://documenter.getpostman.com/view/15718974/UVXqDXuH](doc:https://documenter.getpostman.com/view/15718974/UVXqDXuH)**
+- Code is formatted in [black](https://github.com/psf/black)
+- Code checked using [Flake8](https://flake8.pycqa.org/en/latest/)
+- Postman documentation: **[https://documenter.getpostman.com/view/15718974/UVXqDXuH](https://documenter.getpostman.com/view/15718974/UVXqDXuH)**
 
 
-- Heroku url: **[https://news-board-project.herokuapp.com/api/v1/](doc:https://news-board-project.herokuapp.com/api/v1/)**
+- Heroku url: **[https://news-board-project.herokuapp.com/api/v1/](https://news-board-project.herokuapp.com/api/v1/)**
 
 ---
 
